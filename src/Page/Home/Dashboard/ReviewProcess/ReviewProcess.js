@@ -9,7 +9,7 @@ const ReviewProcess = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?emaill=${user.email}`)
+        fetch(`https://fathomless-atoll-20854.herokuapp.com/reviews?emaill=${user.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

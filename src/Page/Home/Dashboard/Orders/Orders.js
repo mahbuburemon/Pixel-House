@@ -3,7 +3,18 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 const Orders = (props) => {
-    const { productName, city, phone, } = props.order
+    const { _id, productName, city, phone, } = props.order
+
+    const handleDelete = id => {
+        const url = `https://fathomless-atoll-20854.herokuapp.com/orders/${id}`
+        fetch(url, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
 
     return (
         <Table striped bordered hover variant="dark">
@@ -13,7 +24,8 @@ const Orders = (props) => {
                     <td>{productName}</td>
                     <td>{city}</td>
                     <td>{phone}</td>
-                    <td><Button variant="info">pandding</Button> <Button variant="danger">Delete</Button></td>
+                    <td><Button variant="info">pandding</Button>
+                        <Button onClick={() => handleDelete(_id)} variant="danger">Delete</Button></td>
 
                 </tr>
 

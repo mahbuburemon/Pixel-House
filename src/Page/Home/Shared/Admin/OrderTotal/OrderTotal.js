@@ -6,6 +6,8 @@ import { Button } from 'react-bootstrap';
 const OrderTotal = (props) => {
     const { productName, city, phone, } = props.order
 
+
+
     return (
         <div>
             <Container>
@@ -16,7 +18,8 @@ const OrderTotal = (props) => {
                             <td>{productName}</td>
                             <td>{city}</td>
                             <td>{phone}</td>
-                            <td><Button variant="success">Shipping</Button> <Button variant="danger">Delete</Button></td>
+                            <td><Button variant="success">Shipping</Button>
+                                <Button variant="danger">Delete</Button></td>
 
                         </tr>
 

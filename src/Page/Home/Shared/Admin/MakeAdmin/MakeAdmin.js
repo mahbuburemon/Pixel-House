@@ -16,7 +16,7 @@ const MakeAdmin = () => {
     const handleAdminSubmit = e => {
         const user = { email };
 
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://fathomless-atoll-20854.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -35,7 +35,7 @@ const MakeAdmin = () => {
         e.prevenDefault()
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/users/admin`)
+        fetch(`https://fathomless-atoll-20854.herokuapp.com/users/admin`)
             .then(res => res.json())
             .then(data => setAdmin(data))
     }, [])

@@ -6,10 +6,12 @@ const AllOrders = () => {
     const [orderDetails, setOrderDetails] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://fathomless-atoll-20854.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setOrderDetails(data))
     }, [])
+
+
 
     return (
         <div>
@@ -22,6 +24,7 @@ const AllOrders = () => {
                 orderDetails.map(order => <OrderTotal
                     key={order._id}
                     order={order}
+
                 ></OrderTotal>)
             }
 

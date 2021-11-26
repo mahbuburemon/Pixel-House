@@ -11,7 +11,7 @@ const Review = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://fathomless-atoll-20854.herokuapp.com/reviews', data)
             .then(res => {
                 console.log(res)
                 if (res.data.insertedId) {
